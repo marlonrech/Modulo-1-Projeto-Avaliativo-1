@@ -2,4 +2,4 @@
  
 
 
-Projeto de cadastro de vagas
+Projeto de cadastro de vagas para novos desenvolvedores. Sistema de base de conhecimento com objetivo de manter as dicas e padronização da programação em um único lugar de fácil acesso para todos.
