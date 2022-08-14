@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+    <div id="cardTotal">
+
+
+        <div id="cardPrincipal">
+
+            <img src="https://cdn.discordapp.com/attachments/1006333941826977842/1006340291730612294/form.png" id="" alt="Imagem do usuario">
+
+
+            
+            <label for="titulo"> <strong>Titulo</strong></label>
+            <input type="text" name="titulo" data-index="novo" id="inputTitulo" placeholder="Digite o titulo" required>
+
+
+
+            <label for="linguagem/Skill"> <strong>linguagem/Skill</strong></label>
+            <input type="text" name="linguagem/Skill" id="skill" placeholder="Digite sua linguagem ou skill" required>
+
+
+
+            <label for="categoria"> <strong>Categoria</strong></label>
+            <select id="categoria" required>
+                <option selected disabled value="">Selecione</option>
+                <option>FrontEnd</option>
+                <option>BackEnd</option>
+                <option>FullStack</option>
+                <option>Comportamental/Soft</option>
+            </select>
+
+
+
+            <label for="descrição"> <strong>Descrição</strong></label>
+            <textarea name="descricao" id="descricao" cols="30" rows="10"></textarea>
+
+
+
+            <label for="youtube"> <strong>Video do Youtube</strong></label>
+            <input type="text" name="youtube" id="youtube">
+
+            <div id="divBotao">
+                <button id="botaoSalvar" type="submit" onload="">Salvar</button>
+                <button id="botaoLimpar" type="submit" onsubmit="">Limpar</button>
+            </div>
+
+        </div>
+
+        <div id="cardSecundario">
+
+            <div id="cartoes">
+
+                <div class="InfoDeSkills">
+                    <strong>Total</strong>
+                    <p id="contarTotal">0</p>
+                </div>
+        
+                <div class="InfoDeSkills">
+                    <strong>FrontEnd</strong>
+                    <p id="contarFront">0</p>
+                </div>
+        
+                <div class="InfoDeSkills">
+                    <strong>BackEnd</strong>
+                    <p id="contarBack">0</p>
+                </div>
+        
+                <div class="InfoDeSkills">
+                    <strong>FullStack</strong>
+                    <p id="contarFull">0</p>
+                </div>
+        
+                <div class="InfoDeSkills">
+                    <strong>SoftSkills</strong>
+                    <p id="contarSoft">0</p>
+                </div>
+            </div>
+            
+            <div id="divBusca">
+                <input type="text" id="txtBuscar" placeholder="Buscar...">
+                <button id="btnBusca">Buscar</button>
+                <button id="btnLimpar"> Limpar</button>
+            </div> 
+            <div  id="cardsCriados">
+
+
+            </div>
+
+        </div>
+
+       
+
+    </div>
+
+    
+
+
+    
+
+</body>
+
+</html>
