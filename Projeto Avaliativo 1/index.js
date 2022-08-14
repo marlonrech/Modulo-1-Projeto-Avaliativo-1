@@ -96,7 +96,9 @@ const salvarClient = () => {
         if (index == 'novo') {
            location.reload()
             createClient(client)
+            alert('Cliente novo cadastrado com sucesso.')
         } else {
+            alert('Cliente editado com sucesso.')
            updateClient(index, client)
             location.reload()
         }
@@ -194,13 +196,21 @@ contarTotal()
 
 
 
-const deletar = (evento) => {
-    if(evento.target.type == 'button') {
-
+const deletarClient = (evento) => {
+    if (evento.target.type == 'button') {
+        
         const [acao, index] = evento.target.id.split('-')
 
+        if (acao == 'deletar') {
+            const client = readClient()[index]
+            const aceitarExcluir = confirm(`Deseja realmente excluir ${client.titulo}?`)
+
+            if (aceitarExcluir) {
+                deleteClient(index)
+            }
+            
+        }
     }
-    console.log(evento.target.id.split('-'))
 }
 
 
@@ -238,27 +248,9 @@ const editar = (evento) => {
 
 
 
-const deletarClient = (evento) => {
-    if (evento.target.type == 'button') {
-        
-        const [acao, index] = evento.target.id.split('-')
-
-        if (acao == 'deletar') {
-            const client = readClient()[index]
-            const aceitarExcluir = confirm(`Deseja realmente excluir ${client.titulo}?`)
-
-            if (aceitarExcluir) {
-                deleteClient(index)
-            }
-            
-        }
-    }
-}
 
 
-const filtrarTitulo = () => {
-    
-}
+
  
 
 
@@ -284,8 +276,6 @@ document.querySelector('#cardsCriados')
 document.getElementById('btnLimpar')
     .addEventListener('click', limparFiltro)
 
-document.getElementById('txtBuscar')
-    .addEventListener('click', filtrarTitulo)
 
 
 
