@@ -125,6 +125,7 @@ const limparFiltro = () => {
 // função para criar div e adicionar as informações do cliente
 const criarDiv = (client, index) => {
     const novoClient = document.createElement('div')
+    novoClient.className = 'cardsCliente'
     novoClient.innerHTML = `
                  <h1 class='h1'>${client.titulo}</h1>
                  <p><b>Linguagem/Skill: </b>${client.Linguagem}</p>
@@ -132,7 +133,7 @@ const criarDiv = (client, index) => {
                  <p>${client.descriçao}</p>
                  <button type='button' class='btnExcluirCardSecundario' id='deletar-${index}'>Excluir</button>
                  <button type='button' class='btnEditarCardSecundario' id='editar-${index}' >Editar</button>
-                 <button type='button'class='btnVideoCardSecundario' id='video-${index}'>Video</button>
+                 <button type='button' onclick="window.open('${client.video}', '_blank')"class='btnVideoCardSecundario' id='video-${index}'>Video</button>            
              `
     document.getElementById('cardsCriados').appendChild(novoClient)
 }
@@ -148,6 +149,8 @@ const atualizaClient = () => {
 
 atualizaClient()
 
+
+// CONTADOR DAS CATEGORIA E TOTAL
 const contarFront = () => {
     const dbClient = readClient()
     let frontend = dbClient.filter((obj) => {
@@ -195,7 +198,7 @@ contarSoft()
 contarTotal()
 
 
-
+//DELETANDO CLIENTE JA CRIADO
 const deletarClient = (evento) => {
     if (evento.target.type == 'button') {
         
@@ -217,7 +220,7 @@ const deletarClient = (evento) => {
 
 
 
-
+// EDITANDO CLIENTE E SALVANDO NO MESMO INDEX
 const editando = (client) => {
     document.getElementById('inputTitulo').value = client.titulo
     document.getElementById('skill').value = client.Linguagem
@@ -248,7 +251,13 @@ const editar = (evento) => {
 
 
 
+const filtrarTitulo = () => {
+    const dbClient = readClient()
+    let div = document.getElementById('txtBuscar')
+    if (dbClient.titulo.match(div.value)) {
 
+    }
+}
 
 
  
@@ -266,15 +275,20 @@ document.getElementById('botaoSalvar')
 document.getElementById('botaoLimpar')
     .addEventListener('click', limparClient)
 
+// BOTAO PARA DELETAR CLIENTE    
 document.querySelector('#cardsCriados')
     .addEventListener('click', deletarClient)
 
-
+// BOTAO PARA EDITAR CLIENTE
 document.querySelector('#cardsCriados')
     .addEventListener('click', editar)
 
+// BOTAO PARA LIMPAR FILTRO    
 document.getElementById('btnLimpar')
     .addEventListener('click', limparFiltro)
+
+document.getElementById('btnBusca')
+    .addEventListener('click', filtrarTitulo)
 
 
 

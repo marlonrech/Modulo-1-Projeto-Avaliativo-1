@@ -86,7 +86,7 @@ label {
 #btnBusca {
     border: 2px solid #D9D9D9;
     border-radius: 64px;
-    width: 65px;
+    width: 75px;
     height: 36px;
     background: #3ACE5A;
     color:#FFFFFF;
@@ -100,7 +100,7 @@ label {
 #btnLimpar {
     border: 2px solid #D9D9D9;
     border-radius: 64px;
-    width: 65px;
+    width: 75px;
     height: 36px;
     background: #c2d117;
     color:#FFFFFF;
@@ -138,26 +138,46 @@ label {
 
 #divBusca {
     justify-content: space-between
+
 }
 
 
 #cardsCriados {
-    display: flex;
-    background: #FFFFFF;
-    border-radius: 16px;
-    margin: 5px 15px 5px;
-    flex-direction: column;
     overflow-y: scroll;
-    height: 400px;
+    height: 422px;
 
     
 
 }
 
 
+.cardsCliente {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-block: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 1em;
+    background-color: white;
+    border: 1px solid;
+    width: 565px;
+    -webkit-box-shadow: 10px 6px 5px -7px rgba(0,0,0,0.3);
+    -moz-box-shadow: 10px 6px 5px -7px rgba(0,0,0,0.3);
+    box-shadow: 10px 6px 5px -7px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    gap: 6px;
+    word-wrap: break-word; 
+}
+
+
+
+
+
+
 #cardsCriados div {
     display: block;
     margin: 10px;
+    
 }
 
 #cardsCriados div h1 {
@@ -178,7 +198,7 @@ label {
 }
 
 .btnExcluirCardSecundario {
-    margin: 5px 10px 15px 370px;
+    margin: 5px 5px 5px 343px;
     justify-content: flex-end;
     left: 34.35%;
     right: 34.35%;
